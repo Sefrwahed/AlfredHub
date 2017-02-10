@@ -35,4 +35,10 @@ group :development do
   gem 'rails_layout'
 end
 
+group :production do
+  gem 'rails_12factor'
+  gem 'rails_serve_static_assets'
+  gem 'pg'
+end
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
