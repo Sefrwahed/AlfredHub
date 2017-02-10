@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <%= @alfred_module.name %>
+</h1>
+
+<p>
+  <%= @alfred_module.description %>
+</p>
+
+<p>
+  <strong>License:</strong>
+  <%= @alfred_module.license %>
+</p>
+
+<a href="<%= @alfred_module.homepage %>">
+  <strong>Homepage</strong>
+</a>
+
+
+<h2>Versions</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>version #</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @alfred_module.versions.each do |v| %>
+      <tr>
+        <td><strong><%= v.number %></strong></td>
+        <td><%= link_to 'Download', download_alfred_module_version_path(@alfred_module, v) %></td>
+        <td><%= link_to 'Destroy', [@alfred_module, v], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New version', new_alfred_module_version_path(@alfred_module) %> |
+<%= link_to 'Edit', edit_alfred_module_path(@alfred_module) %> |
+<%= link_to 'Back', alfred_modules_path %>

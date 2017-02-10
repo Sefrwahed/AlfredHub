@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Alfred Modules</h1>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>License</th>
+      <th>Homepage</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @alfred_modules.each do |alfred_module| %>
+      <tr>
+        <td><%= alfred_module.name %></td>
+        <td><%= alfred_module.license %></td>
+        <td><a href="<%= alfred_module.homepage %>">link</a></td>
+        <td><%= alfred_module.description %></td>
+        <td><%= link_to 'Show', alfred_module %></td>
+        <td><%= link_to 'Edit', edit_alfred_module_path(alfred_module) %></td>
+        <td><%= link_to 'Destroy', alfred_module, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Alfred Module', new_alfred_module_path %>
