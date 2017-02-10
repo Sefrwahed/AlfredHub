@@ -1,7 +1,7 @@
 class AlfredModule < ApplicationRecord
   has_many :versions
 
-  validates :name, uniqueness: true, presence: true, format: /\A[\w-]\Z/
+  validates :name, uniqueness: true, presence: true, format: /\A[\w-]+\Z/
   validates :homepage, uniqueness: true, presence: true
   validates :description, presence: true
 
