@@ -1,5 +1,9 @@
 class AlfredModulesController < ApplicationController
+  include AlfredModulesHelper
+
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_alfred_module, only: [:show, :edit, :update, :destroy]
+  before_action :check_ownership, only: [:update, :destroy, :edit]
 
   # GET /alfred_modules
   # GET /alfred_modules.json
@@ -25,6 +29,7 @@ class AlfredModulesController < ApplicationController
   # POST /alfred_modules.json
   def create
     @alfred_module = AlfredModule.new(alfred_module_params)
+    @alfred_module.user = current_user
 
     respond_to do |format|
       if @alfred_module.save
@@ -62,6 +67,12 @@ class AlfredModulesController < ApplicationController
   end
 
   private
+    def check_ownership
+      unless can_edit?(@alfred_module)
+        redirect_to @alfred_module, notice: 'Not Your module!, Go create one'
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_alfred_module
       @alfred_module = AlfredModule.find(params[:id])

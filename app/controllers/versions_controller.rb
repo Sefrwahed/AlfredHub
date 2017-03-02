@@ -1,25 +1,14 @@
 class VersionsController < ApplicationController
+  include AlfredModulesHelper
+
+  before_action :authenticate_user!, except: [:download]
   before_action :set_alfred_module
   before_action :set_version, only: [:destroy, :download]
-
-  # GET /versions
-  # GET /versions.json
-  def index
-    @versions = Version.all
-  end
-
-  # GET /versions/1
-  # GET /versions/1.json
-  def show
-  end
+  before_action :check_ownership, except: [:download]
 
   # GET /versions/new
   def new
     @version = Version.new
-  end
-
-  # GET /versions/1/edit
-  def edit
   end
 
   # POST /versions
@@ -34,20 +23,6 @@ class VersionsController < ApplicationController
         format.json { render :show, status: :created, location: @version }
       else
         format.html { render :new }
-        format.json { render json: @version.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /versions/1
-  # PATCH/PUT /versions/1.json
-  def update
-    respond_to do |format|
-      if @version.update(version_params)
-        format.html { redirect_to @a_module, notice: 'Version was successfully updated.' }
-        format.json { render :show, status: :ok, location: @version }
-      else
-        format.html { render :edit }
         format.json { render json: @version.errors, status: :unprocessable_entity }
       end
     end
@@ -69,6 +44,13 @@ class VersionsController < ApplicationController
   end
 
   private
+
+    def check_ownership
+      unless can_edit?(@a_module)
+        redirect_to @a_module, notice: 'Not authorized'
+      end
+    end
+
     def set_version
       @version = Version.find(params[:id])
     end

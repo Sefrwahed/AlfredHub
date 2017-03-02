@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Alfred Modules</h1>
 
 <table class='table'>
@@ -21,13 +19,17 @@
         <td><a href="<%= alfred_module.homepage %>">link</a></td>
         <td><%= alfred_module.description %></td>
         <td><%= link_to 'Show', alfred_module %></td>
-        <td><%= link_to 'Edit', edit_alfred_module_path(alfred_module) %></td>
-        <td><%= link_to 'Destroy', alfred_module, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if can_edit?(alfred_module) %>
+          <td><%= link_to 'Edit', edit_alfred_module_path(alfred_module) %></td>
+          <td><%= link_to 'Destroy', alfred_module, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<% if user_signed_in? %>
+  <%= link_to 'New Alfred Module', new_alfred_module_path %>
+<% end %>
 
-<%= link_to 'New Alfred Module', new_alfred_module_path %>
