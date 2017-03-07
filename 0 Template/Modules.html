@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Alfred Hub</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+  }
+   * {margin: 0; padding: 0; outline: none;}
+
+      .content {
+        width: 30px;
+        height: 30px;
+        margin: 0;
+        padding-top: 2.5px;
+        padding-left: 2.5px;
+      }
+
+      @keyframes spin {
+        0% { -webkit-transform:rotate(0deg); }
+        100% { -webkit-transform:rotate(360deg); }
+      }
+
+      @keyframes spinoff {
+        0% { -webkit-transform:rotate(0deg); }
+        100% { -webkit-transform:rotate(-360deg); }
+      }
+
+      .circle {
+          background-color: rgba(0,0,0,0);
+          border: 3.5px solid rgb(71, 109, 180);
+          opacity: .9;
+          border-right: 3.5px solid rgba(0,0,0,0);
+          border-left: 3.5px solid rgba(0,0,0,0);
+          border-radius: 35px;
+          box-shadow: 0 0 10px #476DB4;
+          width: 35px;
+          height: 35px;
+          margin: 0 auto;
+          /*animation: spinoff 2.7s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);*/
+      }
+
+      .circle1 {
+          background-color: rgba(200,200,200,200);
+          border: 2px solid rgb(71, 109, 180);
+          opacity: .9;
+          /* border-left: 5px solid rgba(0,0,0,0); */
+          /* border-right: 5px solid rgba(0,0,0,0); */
+          border-radius: 35px;
+          box-shadow: 0 0 15px #476DB4;
+          width: 0px;
+          height: 20px;
+          margin: 0 auto;
+          position: relative;
+          top: -27.3px;
+          right: -5px;
+          animation: spinoff 0.8s infinite alternate linear;
+      }
+  .jumbotron {
+      background-color:   #aa7788;
+      /*background-image: url(AlfredRightPattern.jpg);*/
+      /*background-position: 0% 10%;*/
+      /*background-size: cover;*/
+      background-repeat: no-repeat;
+      
+      
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar {
+      margin-bottom: 0;
+      background-color: #664455;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #ffaabb !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #664466 !important;
+      background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
+  footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #f4511e;
+  }
+  .instal-button {
+    background-color: rgba(41, 41, 41, 0.6);
+    border: none;
+    padding: 5px ;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    color: pink;
+    cursor: pointer;
+    height: 30px;
+    width : 160px;
+    border: 0.1px ;
+    border-radius: 15px;
+  }
+   .container-fluid {
+      background-color: rgba(128,0,128,0.05);
+      border-radius: 25px
+  }
+  .table-title{
+    color:  #664455;
+    font-family: Courier ;
+  }
+  .modules-table-content{
+    color:  #664455;
+    opacity: 1;
+    font-family: sans-serif;
+  }
+  .table > tbody > tr > td, 
+  .table > tbody > tr > th{
+    border-top-color: #000;  
+  }
+  thead th {
+    border-bottom-color: #000;
+    border-right-color: #000;
+    border-top-color: #000;
+    border-left-color: #000;
+     
+  }
+  .table-hover thead tr:hover th, .table-hover tbody tr:hover td {
+    background-color: #ffaabb;
+    color: #000000;
+  }
+   table  {
+    margin: 1em 1em;
+  }
+  .vertical-center {
+    min-height: 100%;  
+    min-height: 100vh; 
+    display: flex;
+    align-items: center;
+  }
+  </style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <div class="content">
+        <div class="circle"></div>
+        <div class="circle1"></div>
+      </div>
+     <!--  <a class="navbar-brand" href="#myPage">Alfred Hub</a> -->
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#signup">Sign Up</a></li>
+        <li><a href="#signin">Sign In</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="jumbotron vertical-center" >
+
+  <div class="container-fluid">
+  <table class="table table-hover table-inverse" >
+   
+    <thead class="table-title">
+      <tr>
+        <th>Name</th>
+        <th>License</th>
+        <th>Homepage</th>
+        <th>Description</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody class="modules-table-content">
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>John</td>
+        <td>Doe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>John</td>
+        <td>Doe</td>
+        <td>july@example.com</td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
+</footer>
+
+</body>
+</html>
