@@ -11,6 +11,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
+  @import url('https://fonts.googleapis.com/css?family=Clicker+Script');
+
   body {
       font: 400 15px Lato, sans-serif;
       line-height: 1.8;
@@ -23,6 +25,7 @@
         margin: 0;
         padding-top: 2.5px;
         padding-left: 2.5px;
+        display: inline-block;
 
       }
 
@@ -67,10 +70,10 @@
           animation: spinoff 0.8s infinite alternate linear;
       }
   .jumbotron {
-      background-color: purple /*#F0EBD7; /*CCBBAA;*/
+      background-color: #E7EEE5 /*#F0EBD7; /*CCBBAA;*/
       background-position: 0% 25%;
-      background-image: url('flsbl15.png');
-      background-size: cover;
+/*      background-image: url('flsbl15.png');
+*/    background-size: cover;
       display: block;
       background-repeat: no-repeat;
       color: #476DB4;
@@ -79,26 +82,35 @@
   }
   .navbar {
       margin-bottom: 0;
-      background-color: #170130;
+      background-color: #00CFBC;
       z-index: 9999;
       border: 0;
-      font-size: 12px !important;
+      font-size: 15px !important;
       line-height: 1.42857143 !important;
       letter-spacing: 4px;
       border-radius: 0;
       font-family: Montserrat, sans-serif;
-      overflow: hidden;
-
+      overflow: auto;
+  }
+  .navbar-header{
+    margin: 2% 2%;
+    overflow: auto;
+  }
+  .navbar-title{
+      font-family: 'Clicker Script', cursive;
+      font-size: 22px;
+      font-weight: bold;
+      display: inline-block;
 
   }
   .navbar li a, .navbar .navbar-brand {
-      color: #D46681 !important;
+      color: #6647C1 !important;
       float: left;
+      display: inline-block;
   }
   .navbar-nav li a:hover, .navbar-nav li.active a {
-      color: #F0EBD7 !important;
-      background-color: #fff !important;
-      background-image: url(abstract.jpg);
+      color: #fff !important;
+      background-color: #D9B1EB !important;
       opacity: 0.75;
   }
   .navbar-default .navbar-toggle {
@@ -157,8 +169,8 @@
 */    font-family: Courier ;
   }
   .modules-table-content{
-    color:   #2FC4A7;
-    color:  #664455;
+    color:   #000;
+    color:  #000;
     opacity: 1;
     font-family: sans-serif;
   }
@@ -199,12 +211,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
+      <div class="navbar-title">Alfred</div>
       <div class="content">
         <div class="circle"></div>
         <div class="circle1"></div>
       </div>
       <div class="container-fluid-nav">
-        <div class="input-group input-sm">
+        <div class="input-group input-group-default">
           <input type="Search" class="form-control" css-class="jumb-placeholder" placeholder="Search modules.." required>
           <div class="input-group-btn">
           <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search icon-search"></i></button>
